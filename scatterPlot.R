@@ -1,8 +1,9 @@
 #'plot a scatter3d
-#'jsonString of the form '{"nodes": {"x" : [1,2,3], "y" : [1,2,3], "z" : [1,2,3]},
-#'                         "links" : {"source" : {"x" : [1,2,3], "y" : [1,2,3], "z" : [1,2,3]},
-#'                                  "target" : {"x" : [1,2,3], "y" : [1,2,3], "z" : [1,2,3]}
-#'                                 }
+#'jsonString of the form '{"nodes": [{"x" : 1, "y" : 1, "z" : 1},{"x":1,"y":2,"z":3}]
+#'                         "links" : [{"source" : {"x" : 1, "y" : 1, "z" : 1},
+#'                                  "target" : {"x" : 1, "y" : 1, "z" : 1}}
+#'                                 ,{"source" : {"x" : 1, "y" : 1, "z" : 1},
+#'                                  "target" : {"x" : 1, "y" : 1, "z" : 1}}]
 #'                        }'
 #'This function plots in 3d given coordinates
 #'@param jsonString
@@ -20,7 +21,7 @@ scatterPlot <- function(jsonString)
   rgl::planes3d(a=0,b=0,c=1,d=(-1)*data.json$nodes$z,alpha=0.5)
 
   count=1
-  while(count<=nrow(data.json$links$source)){
+  while(count<=length(data.json$links$source$x)){
     rgl::lines3d(x=c(data.json$links$source$x[c(count)],data.json$links$target$x[c(count)]),
                  y=c(data.json$links$source$y[c(count)],data.json$links$target$y[c(count)]),
                  z=c(data.json$links$source$z[c(count)],data.json$links$target$z[c(count)]),
@@ -28,4 +29,3 @@ scatterPlot <- function(jsonString)
     count=count+1
     }
 }
-

@@ -1,8 +1,9 @@
 #'plot a scatter3d
-#'jsonString of the form '{"nodes": {"x" : [1,2,3], "y" : [1,2,3], "z" : [1,2,3]},
-#'                         "links" : {"source" : {"x" : [1,2,3], "y" : [1,2,3], "z" : [1,2,3]},
-#'                                  "target" : {"x" : [1,2,3], "y" : [1,2,3], "z" : [1,2,3]}
-#'                                 }
+#'jsonString of the form '{"nodes": [{"x" : 1, "y" : 1, "z" : 1},{"x":1,"y":2,"z":3}]
+#'                         "links" : [{"source" : {"x" : 1, "y" : 1, "z" : 1},
+#'                                  "target" : {"x" : 1, "y" : 1, "z" : 1}}
+#'                                 ,{"source" : {"x" : 1, "y" : 1, "z" : 1},
+#'                                  "target" : {"x" : 1, "y" : 1, "z" : 1}}]
 #'                        }'
 #'This function plots in 3d given coordinates
 #'@param jsonString
