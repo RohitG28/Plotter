@@ -2,10 +2,22 @@
 % Please edit documentation in R/scatterPlot.R
 \name{scatterPlot}
 \alias{scatterPlot}
-\title{plot a scatter3d}
+\title{plot a scatter3d
+jsonString of the form '{"nodes": {"x" : [1,2,3], "y" : [1,2,3], "z" : [1,2,3]},
+                        "links" : {"source" : {"x" : [1,2,3], "y" : [1,2,3], "z" : [1,2,3]},
+                                 "target" : {"x" : [1,2,3], "y" : [1,2,3], "z" : [1,2,3]}
+                                }
+                       }'
+This function plots in 3d given coordinates}
 \usage{
-scatterPlot(jsonFilePath)
+scatterPlot(jsonString)
 }
 \description{
+plot a scatter3d
+jsonString of the form '{"nodes": {"x" : [1,2,3], "y" : [1,2,3], "z" : [1,2,3]},
+                        "links" : {"source" : {"x" : [1,2,3], "y" : [1,2,3], "z" : [1,2,3]},
+                                 "target" : {"x" : [1,2,3], "y" : [1,2,3], "z" : [1,2,3]}
+                                }
+                       }'
 This function plots in 3d given coordinates
 }
