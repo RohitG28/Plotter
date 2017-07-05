@@ -21,7 +21,7 @@ scatterPlot <- function(jsonString)
   rgl::planes3d(a=0,b=0,c=1,d=(-1)*data.json$nodes$z,alpha=0.5)
 
   count=1
-  while(count<=length(data.json$links$source$x)){
+  while(count<=nrow(data.json$links$source)){
     rgl::lines3d(x=c(data.json$links$source$x[c(count)],data.json$links$target$x[c(count)]),
                  y=c(data.json$links$source$y[c(count)],data.json$links$target$y[c(count)]),
                  z=c(data.json$links$source$z[c(count)],data.json$links$target$z[c(count)]),
